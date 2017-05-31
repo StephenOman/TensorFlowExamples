@@ -27,10 +27,10 @@ with tf.name_scope("train") as scope:
 XOR_X = [[0,0],[0,1],[1,0],[1,1]]
 XOR_Y = [[0],[1],[1],[0]]
 
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess = tf.Session()
 
-writer = tf.summary.FileWriter("./logs/xor_logs", sess.graph_def)
+writer = tf.summary.FileWriter("./logs/xor_logs", sess.graph)
 
 sess.run(init)
 
